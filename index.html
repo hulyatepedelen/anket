@@ -10,7 +10,7 @@
       background-color: #fff0f5;
       color: #444;
       padding: 20px;
-      max-width: 700px;
+      max-width: 600px;
       margin: auto;
     }
     h1 {
@@ -24,7 +24,7 @@
       border: 2px dashed #ffb6c1;
       border-radius: 15px;
       margin-bottom: 20px;
-      transition: all 0.3s ease;
+      display: none;
     }
     label {
       display: block;
@@ -34,7 +34,7 @@
     input[type="radio"] {
       margin-right: 8px;
     }
-    button {
+    .next-button {
       background-color: #ffb6c1;
       color: white;
       font-size: 18px;
@@ -43,11 +43,11 @@
       border-radius: 25px;
       cursor: pointer;
       display: block;
-      margin: 30px auto;
+      margin: 20px auto;
       box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
       transition: 0.3s;
     }
-    button:hover {
+    .next-button:hover {
       background-color: #ff69b4;
     }
     #result {
@@ -60,85 +60,139 @@
       border: 2px solid #ffb6c1;
       display: none;
     }
-    .emoji {
-      font-size: 26px;
-      margin-right: 6px;
-    }
   </style>
 </head>
 <body>
+
   <h1>🌈 İşaret Dili Ruh Testi 🌈</h1>
-  <p style="text-align:center;">✨ Cevapla, puan topla ve hangi sevimli seviyedesin öğren! ✨</p>
+  <p style="text-align:center;">✨ Her soruya cevap ver, sonunda hangi sevimli seviyede olduğunu öğren! ✨</p>
 
-  <form id="quizForm">
-    <div class="question">
-      <p>1️⃣ Merhametli biri misin?</p>
-      <label><input type="radio" name="q1" value="1"> 🧸 Evet, içim pamuk gibi!</label>
-      <label><input type="radio" name="q1" value="0"> 🌧️ Bazen, duygularım dalgalı.</label>
-    </div>
-
-    <div class="question">
-      <p>2️⃣ Yeni şeyler öğrenmek seni heyecanlandırır mı?</p>
-      <label><input type="radio" name="q2" value="1"> 🚀 Kesinlikle, öğrenmeyi severim!</label>
-      <label><input type="radio" name="q2" value="0"> 😴 Çok da heyecanlandırmaz.</label>
-    </div>
-
-    <div class="question">
-      <p>3️⃣ İnsanlara yardım etmek seni mutlu eder mi?</p>
-      <label><input type="radio" name="q3" value="1"> 🤗 Evet, kalbim kocaman!</label>
-      <label><input type="radio" name="q3" value="0"> 🙈 Bazen olabilir.</label>
-    </div>
-
-    <div class="question">
-      <p>4️⃣ Empati gücün yüksek mi?</p>
-      <label><input type="radio" name="q4" value="1"> 💓 Evet, hemen hissederim.</label>
-      <label><input type="radio" name="q4" value="0"> 🫧 Bazen fark etmem zor oluyor.</label>
-    </div>
-
-    <div class="question">
-      <p>5️⃣ Sessizce anlaşmak sence büyülü mü?</p>
-      <label><input type="radio" name="q5" value="1"> ✨ Evet! Sessizliğin dili var.</label>
-      <label><input type="radio" name="q5" value="0"> 🤔 Daha önce düşünmedim.</label>
-    </div>
-
-    <div class="question">
-      <p>6️⃣ Hiç işitme engelli biriyle tanıştın mı?</p>
-      <label><input type="radio" name="q6" value="1"> 🫶 Evet, tanıştım!</label>
-      <label><input type="radio" name="q6" value="0"> 🐥 Hayır ama tanışmak isterim.</label>
-    </div>
-
-    <div class="question">
-      <p>7️⃣ Beden dili ve yüz ifadesine dikkat eder misin?</p>
-      <label><input type="radio" name="q7" value="1"> 🎭 Evet, çok dikkat ederim.</label>
-      <label><input type="radio" name="q7" value="0"> 😅 Pek fark etmiyorum genelde.</label>
-    </div>
-
-    <button type="button" onclick="evaluateQuiz()">✨ Sonucumu Gör ✨</button>
-  </form>
+  <div id="quiz">
+    <!-- Sorular burada dinamik olarak gösterilecek -->
+  </div>
 
   <div id="result"></div>
 
   <script>
-    function evaluateQuiz() {
-      let total = 0;
-      for (let i = 1; i <= 7; i++) {
-        const selected = document.querySelector('input[name="q' + i + '"]:checked');
-        if (selected) {
-          total += parseInt(selected.value);
-        }
+    const questions = [
+      {
+        text: "1️⃣ Merhametli biri misin?",
+        options: [
+          { text: "🧸 Evet, içim pamuk gibi!", value: 1 },
+          { text: "🌧️ Bazen, duygularım dalgalı.", value: 0 }
+        ]
+      },
+      {
+        text: "2️⃣ Yeni şeyler öğrenmek seni heyecanlandırır mı?",
+        options: [
+          { text: "🚀 Kesinlikle, öğrenmeyi severim!", value: 1 },
+          { text: "😴 Çok da heyecanlandırmaz.", value: 0 }
+        ]
+      },
+      {
+        text: "3️⃣ İnsanlara yardım etmek seni mutlu eder mi?",
+        options: [
+          { text: "🤗 Evet, kalbim kocaman!", value: 1 },
+          { text: "🙈 Bazen olabilir.", value: 0 }
+        ]
+      },
+      {
+        text: "4️⃣ Empati gücün yüksek mi?",
+        options: [
+          { text: "💓 Evet, hemen hissederim.", value: 1 },
+          { text: "🫧 Bazen fark etmem zor oluyor.", value: 0 }
+        ]
+      },
+      {
+        text: "5️⃣ Sessizce anlaşmak sence büyülü mü?",
+        options: [
+          { text: "✨ Evet! Sessizliğin dili var.", value: 1 },
+          { text: "🤔 Daha önce düşünmedim.", value: 0 }
+        ]
+      },
+      {
+        text: "6️⃣ Hiç işitme engelli biriyle tanıştın mı?",
+        options: [
+          { text: "🫶 Evet, tanıştım!", value: 1 },
+          { text: "🐥 Hayır ama tanışmak isterim.", value: 0 }
+        ]
+      },
+      {
+        text: "7️⃣ Beden dili ve yüz ifadesine dikkat eder misin?",
+        options: [
+          { text: "🎭 Evet, çok dikkat ederim.", value: 1 },
+          { text: "😅 Pek fark etmiyorum genelde.", value: 0 }
+        ]
       }
+    ];
 
-      const result = document.getElementById("result");
-      result.style.display = "block";
+    let currentQuestion = 0;
+    let score = 0;
 
-      if (total >= 6) {
-        result.innerHTML = "🌟 <strong>Süper Yıldız Seviye!</strong><br><br>Senin kalbin işaret dili için ışıldıyor! 🤟<br>Hadi, bu güzel dili öğrenmeye başla!";
-      } else if (total >= 4) {
-        result.innerHTML = "💖 <strong>Pembe Kalp Seviye!</strong><br><br>Senin içinde bu dilin tohumları var! 🪴<br>Biraz bilgiyle çok güzel işler yaparsın!";
+    const quizDiv = document.getElementById("quiz");
+    const resultDiv = document.getElementById("result");
+
+    function showQuestion() {
+      quizDiv.innerHTML = "";
+
+      const q = questions[currentQuestion];
+      const qDiv = document.createElement("div");
+      qDiv.className = "question";
+      qDiv.style.display = "block";
+
+      const qText = document.createElement("p");
+      qText.innerText = q.text;
+      qDiv.appendChild(qText);
+
+      q.options.forEach((option, index) => {
+        const label = document.createElement("label");
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = "answer";
+        input.value = option.value;
+        label.appendChild(input);
+        label.appendChild(document.createTextNode(" " + option.text));
+        qDiv.appendChild(label);
+      });
+
+      const nextBtn = document.createElement("button");
+      nextBtn.innerText = "Sonraki ➡️";
+      nextBtn.className = "next-button";
+      nextBtn.onclick = () => {
+        const selected = qDiv.querySelector('input[name="answer"]:checked');
+        if (selected) {
+          score += parseInt(selected.value);
+          currentQuestion++;
+          if (currentQuestion < questions.length) {
+            showQuestion();
+          } else {
+            showResult();
+          }
+        } else {
+          alert("Lütfen bir seçenek seç!");
+        }
+      };
+
+      qDiv.appendChild(nextBtn);
+      quizDiv.appendChild(qDiv);
+    }
+
+    function showResult() {
+      quizDiv.innerHTML = "";
+      resultDiv.style.display = "block";
+
+      if (score >= 6) {
+        resultDiv.innerHTML = "🌟 <strong>Süper Yıldız Seviye!</strong><br><br>Senin kalbin işaret dili için ışıldıyor! 🤟<br>Hadi, bu güzel dili öğrenmeye başla!";
+      } else if (score >= 4) {
+        resultDiv.innerHTML = "💖 <strong>Pembe Kalp Seviye!</strong><br><br>Senin içinde bu dilin tohumları var! 🪴<br>Biraz bilgiyle çok güzel işler yaparsın!";
       } else {
-        result.innerHTML = "🍬 <strong>Minnoş Seviye</strong><br><br>Sen daha yolun başındasın ama bu tatlı yolculuk seni bekliyor! 🎀";
+        resultDiv.innerHTML = "🍬 <strong>Minnoş Seviye</strong><br><br>Sen daha yolun başındasın ama bu tatlı yolculuk seni bekliyor! 🎀";
       }
     }
+
+    // İlk soruyu göster
+    showQuestion();
   </script>
+
 </body>
 </html>
