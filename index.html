@@ -2,87 +2,109 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>İşaret Dili Öğrenmeli misiniz?</title>
+  <title>🌸 İşaret Dili Seviye Testi 🌸</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f0f8ff;
-      color: #333;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-color: #ffeefc;
+      color: #444;
+      padding: 20px;
       max-width: 600px;
       margin: auto;
-      padding: 30px;
     }
     h1 {
       text-align: center;
-      color: #2a9d8f;
+      color: #ff69b4;
+      font-size: 28px;
     }
     .question {
+      background-color: #fff0fa;
+      padding: 15px;
+      border: 2px dashed #ffb6c1;
+      border-radius: 15px;
       margin-bottom: 20px;
     }
+    label {
+      display: block;
+      margin: 10px 0;
+    }
     button {
-      background-color: #2a9d8f;
+      background-color: #ffb6c1;
       color: white;
+      font-size: 18px;
       padding: 10px 20px;
-      margin-top: 20px;
       border: none;
-      border-radius: 8px;
+      border-radius: 25px;
       cursor: pointer;
+      display: block;
+      margin: 20px auto;
+      transition: 0.3s;
     }
     button:hover {
-      background-color: #21867a;
+      background-color: #ff69b4;
+    }
+    #result {
+      text-align: center;
+      font-size: 20px;
+      margin-top: 30px;
+      padding: 20px;
+      border-radius: 15px;
+      background-color: #fff0f5;
+      border: 2px solid #ffb6c1;
     }
   </style>
 </head>
 <body>
-  <h1>İşaret Dili Öğrenmeli misiniz?</h1>
+  <h1>🌟 İşaret Dili Seviye Testi 🌟</h1>
+  <p style="text-align:center;">🎀 Cevapla, puan topla ve ne kadar *işaret dili ruhuna* sahipsin gör! 🎀</p>
 
   <form id="quizForm">
     <div class="question">
-      <p>1. Merhametli biri misiniz?</p>
-      <label><input type="radio" name="q1" value="1"> Evet</label><br>
-      <label><input type="radio" name="q1" value="0"> Hayır</label>
+      <p>1️⃣ Merhametli biri misin? 🐻</p>
+      <label><input type="radio" name="q1" value="1"> Evet, içim pamuk gibi! 🌸</label>
+      <label><input type="radio" name="q1" value="0"> Bazen… 🌧️</label>
     </div>
 
     <div class="question">
-      <p>2. Yeni şeyler öğrenmeye açık mısınız?</p>
-      <label><input type="radio" name="q2" value="1"> Evet</label><br>
-      <label><input type="radio" name="q2" value="0"> Hayır</label>
+      <p>2️⃣ Yeni şeyler öğrenmek seni heyecanlandırır mı? ✨</p>
+      <label><input type="radio" name="q2" value="1"> Evet, macera ararım! 🚀</label>
+      <label><input type="radio" name="q2" value="0"> Çok da değil 🙈</label>
     </div>
 
     <div class="question">
-      <p>3. İnsanlara yardım etmeyi sever misiniz?</p>
-      <label><input type="radio" name="q3" value="1"> Evet</label><br>
-      <label><input type="radio" name="q3" value="0"> Hayır</label>
+      <p>3️⃣ İnsanlara yardım etmek seni mutlu eder mi? 🎁</p>
+      <label><input type="radio" name="q3" value="1"> Kesinlikle! 🤗</label>
+      <label><input type="radio" name="q3" value="0"> Arada bir olur 🐾</label>
     </div>
 
     <div class="question">
-      <p>4. Empati kurabilen biri misiniz?</p>
-      <label><input type="radio" name="q4" value="1"> Evet</label><br>
-      <label><input type="radio" name="q4" value="0"> Hayır</label>
+      <p>4️⃣ Empati gücün yüksek mi? 💞</p>
+      <label><input type="radio" name="q4" value="1"> Evet, kalbim radar gibi! 💓</label>
+      <label><input type="radio" name="q4" value="0"> Nadir hissederim 🫧</label>
     </div>
 
     <div class="question">
-      <p>5. Sessiz bir ortamda iletişim kurmanın yollarını merak eder misiniz?</p>
-      <label><input type="radio" name="q5" value="1"> Evet</label><br>
-      <label><input type="radio" name="q5" value="0"> Hayır</label>
+      <p>5️⃣ Sessizce anlaşmak sence büyülü mü? 🧚</p>
+      <label><input type="radio" name="q5" value="1"> Evet! Sessizliğin sesi var 🐱</label>
+      <label><input type="radio" name="q5" value="0"> Pek düşünmedim 🤔</label>
     </div>
 
     <div class="question">
-      <p>6. Hayatınızda işitme engelli biri oldu mu ya da olma ihtimali var mı?</p>
-      <label><input type="radio" name="q6" value="1"> Evet</label><br>
-      <label><input type="radio" name="q6" value="0"> Hayır</label>
+      <p>6️⃣ Hiç işitme engelli biriyle tanıştın mı? 👂</p>
+      <label><input type="radio" name="q6" value="1"> Evet, hayatımda biri oldu 🫶</label>
+      <label><input type="radio" name="q6" value="0"> Hayır ama olabilir 🐥</label>
     </div>
 
     <div class="question">
-      <p>7. Dil ve beden dili arasındaki ilişkiyi ilginç buluyor musunuz?</p>
-      <label><input type="radio" name="q7" value="1"> Evet</label><br>
-      <label><input type="radio" name="q7" value="0"> Hayır</label>
+      <p>7️⃣ Beden dili ve yüz ifadesine dikkat eder misin? 🪞</p>
+      <label><input type="radio" name="q7" value="1"> Evet, mimikler kalbimin çevirmeni! 🎭</label>
+      <label><input type="radio" name="q7" value="0"> Bazen gözümden kaçar 😅</label>
     </div>
 
-    <button type="button" onclick="evaluateQuiz()">Sonucu Gör</button>
+    <button type="button" onclick="evaluateQuiz()">✨ Puanımı Göster ✨</button>
   </form>
 
-  <div id="result" style="margin-top: 30px; font-size: 1.2em;"></div>
+  <div id="result"></div>
 
   <script>
     function evaluateQuiz() {
@@ -95,10 +117,12 @@
       }
 
       const resultDiv = document.getElementById("result");
-      if (total >= 4) {
-        resultDiv.innerHTML = "💬 Harika! Sen kesinlikle işaret dili öğrenmelisin! Hem kendin hem de toplum için bu çok anlamlı bir adım olur. 🤟";
+      if (total >= 6) {
+        resultDiv.innerHTML = "🌈 <strong>Süper Yıldız Seviye!</strong><br>Senin ruhun tam bir işaret dili gönüllüsü! 🤟💖 Haydi hemen başla, dünya seni bekliyor!";
+      } else if (total >= 4) {
+        resultDiv.innerHTML = "🌟 <strong>Pembe Kalp Seviye!</strong><br>Senin içinde bu dilin kıvılcımı var! Biraz öğren, çok şey değişecek!";
       } else {
-        resultDiv.innerHTML = "🤔 Belki henüz hazır değilsin ama bir gün senin de işaret diliyle tanışman kaçınılmaz olabilir.";
+        resultDiv.innerHTML = "🍬 <strong-Minnoş Seviye</strong><br>Henüz başlama vaktin gelmemiş olabilir ama bir gün sen de bu tatlı dili keşfedeceksin!";
       }
     }
   </script>
