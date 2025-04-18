@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>İşaret Dili Öğrenmeli misiniz?</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f8ff;
+      color: #333;
+      max-width: 600px;
+      margin: auto;
+      padding: 30px;
+    }
+    h1 {
+      text-align: center;
+      color: #2a9d8f;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    button {
+      background-color: #2a9d8f;
+      color: white;
+      padding: 10px 20px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #21867a;
+    }
+  </style>
+</head>
+<body>
+  <h1>İşaret Dili Öğrenmeli misiniz?</h1>
+
+  <form id="quizForm">
+    <div class="question">
+      <p>1. Merhametli biri misiniz?</p>
+      <label><input type="radio" name="q1" value="1"> Evet</label><br>
+      <label><input type="radio" name="q1" value="0"> Hayır</label>
+    </div>
+
+    <div class="question">
+      <p>2. Yeni şeyler öğrenmeye açık mısınız?</p>
+      <label><input type="radio" name="q2" value="1"> Evet</label><br>
+      <label><input type="radio" name="q2" value="0"> Hayır</label>
+    </div>
+
+    <div class="question">
+      <p>3. İnsanlara yardım etmeyi sever misiniz?</p>
+      <label><input type="radio" name="q3" value="1"> Evet</label><br>
+      <label><input type="radio" name="q3" value="0"> Hayır</label>
+    </div>
+
+    <div class="question">
+      <p>4. Empati kurabilen biri misiniz?</p>
+      <label><input type="radio" name="q4" value="1"> Evet</label><br>
+      <label><input type="radio" name="q4" value="0"> Hayır</label>
+    </div>
+
+    <div class="question">
+      <p>5. Sessiz bir ortamda iletişim kurmanın yollarını merak eder misiniz?</p>
+      <label><input type="radio" name="q5" value="1"> Evet</label><br>
+      <label><input type="radio" name="q5" value="0"> Hayır</label>
+    </div>
+
+    <div class="question">
+      <p>6. Hayatınızda işitme engelli biri oldu mu ya da olma ihtimali var mı?</p>
+      <label><input type="radio" name="q6" value="1"> Evet</label><br>
+      <label><input type="radio" name="q6" value="0"> Hayır</label>
+    </div>
+
+    <div class="question">
+      <p>7. Dil ve beden dili arasındaki ilişkiyi ilginç buluyor musunuz?</p>
+      <label><input type="radio" name="q7" value="1"> Evet</label><br>
+      <label><input type="radio" name="q7" value="0"> Hayır</label>
+    </div>
+
+    <button type="button" onclick="evaluateQuiz()">Sonucu Gör</button>
+  </form>
+
+  <div id="result" style="margin-top: 30px; font-size: 1.2em;"></div>
+
+  <script>
+    function evaluateQuiz() {
+      let total = 0;
+      for (let i = 1; i <= 7; i++) {
+        const answer = document.querySelector('input[name="q' + i + '"]:checked');
+        if (answer) {
+          total += parseInt(answer.value);
+        }
+      }
+
+      const resultDiv = document.getElementById("result");
+      if (total >= 4) {
+        resultDiv.innerHTML = "💬 Harika! Sen kesinlikle işaret dili öğrenmelisin! Hem kendin hem de toplum için bu çok anlamlı bir adım olur. 🤟";
+      } else {
+        resultDiv.innerHTML = "🤔 Belki henüz hazır değilsin ama bir gün senin de işaret diliyle tanışman kaçınılmaz olabilir.";
+      }
+    }
+  </script>
+</body>
+</html>
