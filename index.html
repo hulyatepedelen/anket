@@ -2,14 +2,15 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>🌸 İşaret Dili Seviye Testi 🌸</title>
+  <title>🌸 İşaret Dili Ruh Testi 🌸</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: 'Comic Sans MS', cursive, sans-serif;
-      background-color: #ffeefc;
+      background-color: #fff0f5;
       color: #444;
       padding: 20px;
-      max-width: 600px;
+      max-width: 700px;
       margin: auto;
     }
     h1 {
@@ -18,26 +19,32 @@
       font-size: 28px;
     }
     .question {
-      background-color: #fff0fa;
+      background-color: #ffeefc;
       padding: 15px;
       border: 2px dashed #ffb6c1;
       border-radius: 15px;
       margin-bottom: 20px;
+      transition: all 0.3s ease;
     }
     label {
       display: block;
       margin: 10px 0;
+      cursor: pointer;
+    }
+    input[type="radio"] {
+      margin-right: 8px;
     }
     button {
       background-color: #ffb6c1;
       color: white;
       font-size: 18px;
-      padding: 10px 20px;
+      padding: 10px 25px;
       border: none;
       border-radius: 25px;
       cursor: pointer;
       display: block;
-      margin: 20px auto;
+      margin: 30px auto;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
       transition: 0.3s;
     }
     button:hover {
@@ -49,59 +56,64 @@
       margin-top: 30px;
       padding: 20px;
       border-radius: 15px;
-      background-color: #fff0f5;
+      background-color: #fff0fa;
       border: 2px solid #ffb6c1;
+      display: none;
+    }
+    .emoji {
+      font-size: 26px;
+      margin-right: 6px;
     }
   </style>
 </head>
 <body>
-  <h1>🌟 İşaret Dili Seviye Testi 🌟</h1>
-  <p style="text-align:center;">🎀 Cevapla, puan topla ve ne kadar *işaret dili ruhuna* sahipsin gör! 🎀</p>
+  <h1>🌈 İşaret Dili Ruh Testi 🌈</h1>
+  <p style="text-align:center;">✨ Cevapla, puan topla ve hangi sevimli seviyedesin öğren! ✨</p>
 
   <form id="quizForm">
     <div class="question">
-      <p>1️⃣ Merhametli biri misin? 🐻</p>
-      <label><input type="radio" name="q1" value="1"> Evet, içim pamuk gibi! 🌸</label>
-      <label><input type="radio" name="q1" value="0"> Bazen… 🌧️</label>
+      <p>1️⃣ Merhametli biri misin?</p>
+      <label><input type="radio" name="q1" value="1"> 🧸 Evet, içim pamuk gibi!</label>
+      <label><input type="radio" name="q1" value="0"> 🌧️ Bazen, duygularım dalgalı.</label>
     </div>
 
     <div class="question">
-      <p>2️⃣ Yeni şeyler öğrenmek seni heyecanlandırır mı? ✨</p>
-      <label><input type="radio" name="q2" value="1"> Evet, macera ararım! 🚀</label>
-      <label><input type="radio" name="q2" value="0"> Çok da değil 🙈</label>
+      <p>2️⃣ Yeni şeyler öğrenmek seni heyecanlandırır mı?</p>
+      <label><input type="radio" name="q2" value="1"> 🚀 Kesinlikle, öğrenmeyi severim!</label>
+      <label><input type="radio" name="q2" value="0"> 😴 Çok da heyecanlandırmaz.</label>
     </div>
 
     <div class="question">
-      <p>3️⃣ İnsanlara yardım etmek seni mutlu eder mi? 🎁</p>
-      <label><input type="radio" name="q3" value="1"> Kesinlikle! 🤗</label>
-      <label><input type="radio" name="q3" value="0"> Arada bir olur 🐾</label>
+      <p>3️⃣ İnsanlara yardım etmek seni mutlu eder mi?</p>
+      <label><input type="radio" name="q3" value="1"> 🤗 Evet, kalbim kocaman!</label>
+      <label><input type="radio" name="q3" value="0"> 🙈 Bazen olabilir.</label>
     </div>
 
     <div class="question">
-      <p>4️⃣ Empati gücün yüksek mi? 💞</p>
-      <label><input type="radio" name="q4" value="1"> Evet, kalbim radar gibi! 💓</label>
-      <label><input type="radio" name="q4" value="0"> Nadir hissederim 🫧</label>
+      <p>4️⃣ Empati gücün yüksek mi?</p>
+      <label><input type="radio" name="q4" value="1"> 💓 Evet, hemen hissederim.</label>
+      <label><input type="radio" name="q4" value="0"> 🫧 Bazen fark etmem zor oluyor.</label>
     </div>
 
     <div class="question">
-      <p>5️⃣ Sessizce anlaşmak sence büyülü mü? 🧚</p>
-      <label><input type="radio" name="q5" value="1"> Evet! Sessizliğin sesi var 🐱</label>
-      <label><input type="radio" name="q5" value="0"> Pek düşünmedim 🤔</label>
+      <p>5️⃣ Sessizce anlaşmak sence büyülü mü?</p>
+      <label><input type="radio" name="q5" value="1"> ✨ Evet! Sessizliğin dili var.</label>
+      <label><input type="radio" name="q5" value="0"> 🤔 Daha önce düşünmedim.</label>
     </div>
 
     <div class="question">
-      <p>6️⃣ Hiç işitme engelli biriyle tanıştın mı? 👂</p>
-      <label><input type="radio" name="q6" value="1"> Evet, hayatımda biri oldu 🫶</label>
-      <label><input type="radio" name="q6" value="0"> Hayır ama olabilir 🐥</label>
+      <p>6️⃣ Hiç işitme engelli biriyle tanıştın mı?</p>
+      <label><input type="radio" name="q6" value="1"> 🫶 Evet, tanıştım!</label>
+      <label><input type="radio" name="q6" value="0"> 🐥 Hayır ama tanışmak isterim.</label>
     </div>
 
     <div class="question">
-      <p>7️⃣ Beden dili ve yüz ifadesine dikkat eder misin? 🪞</p>
-      <label><input type="radio" name="q7" value="1"> Evet, mimikler kalbimin çevirmeni! 🎭</label>
-      <label><input type="radio" name="q7" value="0"> Bazen gözümden kaçar 😅</label>
+      <p>7️⃣ Beden dili ve yüz ifadesine dikkat eder misin?</p>
+      <label><input type="radio" name="q7" value="1"> 🎭 Evet, çok dikkat ederim.</label>
+      <label><input type="radio" name="q7" value="0"> 😅 Pek fark etmiyorum genelde.</label>
     </div>
 
-    <button type="button" onclick="evaluateQuiz()">✨ Puanımı Göster ✨</button>
+    <button type="button" onclick="evaluateQuiz()">✨ Sonucumu Gör ✨</button>
   </form>
 
   <div id="result"></div>
@@ -110,19 +122,21 @@
     function evaluateQuiz() {
       let total = 0;
       for (let i = 1; i <= 7; i++) {
-        const answer = document.querySelector('input[name="q' + i + '"]:checked');
-        if (answer) {
-          total += parseInt(answer.value);
+        const selected = document.querySelector('input[name="q' + i + '"]:checked');
+        if (selected) {
+          total += parseInt(selected.value);
         }
       }
 
-      const resultDiv = document.getElementById("result");
+      const result = document.getElementById("result");
+      result.style.display = "block";
+
       if (total >= 6) {
-        resultDiv.innerHTML = "🌈 <strong>Süper Yıldız Seviye!</strong><br>Senin ruhun tam bir işaret dili gönüllüsü! 🤟💖 Haydi hemen başla, dünya seni bekliyor!";
+        result.innerHTML = "🌟 <strong>Süper Yıldız Seviye!</strong><br><br>Senin kalbin işaret dili için ışıldıyor! 🤟<br>Hadi, bu güzel dili öğrenmeye başla!";
       } else if (total >= 4) {
-        resultDiv.innerHTML = "🌟 <strong>Pembe Kalp Seviye!</strong><br>Senin içinde bu dilin kıvılcımı var! Biraz öğren, çok şey değişecek!";
+        result.innerHTML = "💖 <strong>Pembe Kalp Seviye!</strong><br><br>Senin içinde bu dilin tohumları var! 🪴<br>Biraz bilgiyle çok güzel işler yaparsın!";
       } else {
-        resultDiv.innerHTML = "🍬 <strong-Minnoş Seviye</strong><br>Henüz başlama vaktin gelmemiş olabilir ama bir gün sen de bu tatlı dili keşfedeceksin!";
+        result.innerHTML = "🍬 <strong>Minnoş Seviye</strong><br><br>Sen daha yolun başındasın ama bu tatlı yolculuk seni bekliyor! 🎀";
       }
     }
   </script>
