@@ -2,27 +2,33 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>🌸 İşaret Dili Ruh Testi 🌸</title>
+  <title>İşaret Dili Ruh Testi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      background-color: #fff0f5;
-      color: #444;
+      font-family: 'Times New Roman', serif;
+      background-color: #fefefe;
+      color: #333;
       padding: 20px;
       max-width: 600px;
       margin: auto;
     }
     h1 {
       text-align: center;
-      color: #ff69b4;
-      font-size: 28px;
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+    p.intro {
+      text-align: center;
+      font-size: 16px;
+      margin-bottom: 30px;
+      color: #555;
     }
     .question {
-      background-color: #ffeefc;
+      background-color: #f8f8f8;
       padding: 15px;
-      border: 2px dashed #ffb6c1;
-      border-radius: 15px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
       margin-bottom: 20px;
       display: none;
     }
@@ -30,98 +36,96 @@
       display: block;
       margin: 10px 0;
       cursor: pointer;
+      font-size: 16px;
     }
     input[type="radio"] {
       margin-right: 8px;
     }
     .next-button {
-      background-color: #ffb6c1;
+      background-color: #999;
       color: white;
-      font-size: 18px;
-      padding: 10px 25px;
+      font-size: 16px;
+      padding: 8px 20px;
       border: none;
-      border-radius: 25px;
+      border-radius: 20px;
       cursor: pointer;
       display: block;
       margin: 20px auto;
-      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
       transition: 0.3s;
     }
     .next-button:hover {
-      background-color: #ff69b4;
+      background-color: #666;
     }
     #result {
       text-align: center;
-      font-size: 20px;
+      font-size: 18px;
       margin-top: 30px;
       padding: 20px;
-      border-radius: 15px;
-      background-color: #fff0fa;
-      border: 2px solid #ffb6c1;
+      border-radius: 10px;
+      background-color: #f5f5f5;
+      border: 1px solid #ccc;
       display: none;
     }
   </style>
 </head>
 <body>
 
-  <h1>🌈 İşaret Dili Ruh Testi 🌈</h1>
-  <p style="text-align:center;">✨ Her soruya cevap ver, sonunda hangi sevimli seviyede olduğunu öğren! ✨</p>
+  <h1>İşaret Dili Ruh Testi</h1>
+  <p class="intro">Her soruya cevap ver, sonunda işaret diliyle ne kadar uyumlu olduğunu öğren!</p>
 
-  <div id="quiz">
-    <!-- Sorular burada dinamik olarak gösterilecek -->
-  </div>
+  <div id="quiz"></div>
 
   <div id="result"></div>
 
   <script>
     const questions = [
       {
-        text: "1️⃣ Merhametli biri misin?",
+        text: "Merhametli biri misin?",
         options: [
-          { text: "🧸 Evet, içim pamuk gibi!", value: 1 },
-          { text: "🌧️ Bazen, duygularım dalgalı.", value: 0 }
+          { text: "Evet, içim pamuk gibi.", value: 1 },
+          { text: "Bazen, duygularım dalgalı.", value: 0 }
         ]
       },
       {
-        text: "2️⃣ Yeni şeyler öğrenmek seni heyecanlandırır mı?",
+        text: "Yeni şeyler öğrenmek seni heyecanlandırır mı?",
         options: [
-          { text: "🚀 Kesinlikle, öğrenmeyi severim!", value: 1 },
-          { text: "😴 Çok da heyecanlandırmaz.", value: 0 }
+          { text: "Kesinlikle, öğrenmeyi severim.", value: 1 },
+          { text: "Çok da heyecanlandırmaz.", value: 0 }
         ]
       },
       {
-        text: "3️⃣ İnsanlara yardım etmek seni mutlu eder mi?",
+        text: "İnsanlara yardım etmek seni mutlu eder mi?",
         options: [
-          { text: "🤗 Evet, kalbim kocaman!", value: 1 },
-          { text: "🙈 Bazen olabilir.", value: 0 }
+          { text: "Evet, kalbim kocaman.", value: 1 },
+          { text: "Bazen olabilir.", value: 0 }
         ]
       },
       {
-        text: "4️⃣ Empati gücün yüksek mi?",
+        text: "Empati gücün yüksek mi?",
         options: [
-          { text: "💓 Evet, hemen hissederim.", value: 1 },
-          { text: "🫧 Bazen fark etmem zor oluyor.", value: 0 }
+          { text: "Evet, hemen hissederim.", value: 1 },
+          { text: "Bazen fark etmem zor oluyor.", value: 0 }
         ]
       },
       {
-        text: "5️⃣ Sessizce anlaşmak sence büyülü mü?",
+        text: "Sessizce anlaşmak sence büyülü mü?",
         options: [
-          { text: "✨ Evet! Sessizliğin dili var.", value: 1 },
-          { text: "🤔 Daha önce düşünmedim.", value: 0 }
+          { text: "Evet! Sessizliğin dili var.", value: 1 },
+          { text: "Daha önce düşünmedim.", value: 0 }
         ]
       },
       {
-        text: "6️⃣ Hiç işitme engelli biriyle tanıştın mı?",
+        text: "Hiç işitme engelli biriyle tanıştın mı?",
         options: [
-          { text: "🫶 Evet, tanıştım!", value: 1 },
-          { text: "🐥 Hayır ama tanışmak isterim.", value: 0 }
+          { text: "Evet, tanıştım.", value: 1 },
+          { text: "Hayır ama tanışmak isterim.", value: 0 }
         ]
       },
       {
-        text: "7️⃣ Beden dili ve yüz ifadesine dikkat eder misin?",
+        text: "Beden dili ve yüz ifadesine dikkat eder misin?",
         options: [
-          { text: "🎭 Evet, çok dikkat ederim.", value: 1 },
-          { text: "😅 Pek fark etmiyorum genelde.", value: 0 }
+          { text: "Evet, çok dikkat ederim.", value: 1 },
+          { text: "Pek fark etmiyorum genelde.", value: 0 }
         ]
       }
     ];
@@ -156,7 +160,7 @@
       });
 
       const nextBtn = document.createElement("button");
-      nextBtn.innerText = "Sonraki ➡️";
+      nextBtn.innerText = "Sonraki";
       nextBtn.className = "next-button";
       nextBtn.onclick = () => {
         const selected = qDiv.querySelector('input[name="answer"]:checked');
@@ -169,7 +173,7 @@
             showResult();
           }
         } else {
-          alert("Lütfen bir seçenek seç!");
+          alert("Lütfen bir seçenek seç.");
         }
       };
 
@@ -182,15 +186,15 @@
       resultDiv.style.display = "block";
 
       if (score >= 6) {
-        resultDiv.innerHTML = "🌟 <strong>Süper Yıldız Seviye!</strong><br><br>Senin kalbin işaret dili için ışıldıyor! 🤟<br>Hadi, bu güzel dili öğrenmeye başla!";
+        resultDiv.innerHTML = "<strong>Harika!</strong><br><br>Senin ruhun işaret diliyle mükemmel uyumlu. Bu dili öğrenmelisin!";
       } else if (score >= 4) {
-        resultDiv.innerHTML = "💖 <strong>Pembe Kalp Seviye!</strong><br><br>Senin içinde bu dilin tohumları var! 🪴<br>Biraz bilgiyle çok güzel işler yaparsın!";
+        resultDiv.innerHTML = "<strong>Güzel Başlangıç!</strong><br><br>İçinde bu yolculuğu başlatacak potansiyel var.";
       } else {
-        resultDiv.innerHTML = "🍬 <strong>Minnoş Seviye</strong><br><br>Sen daha yolun başındasın ama bu tatlı yolculuk seni bekliyor! 🎀";
+        resultDiv.innerHTML = "<strong>Farkındalık Zamanı!</strong><br><br>Belki de bu testi çözmen bir işaretti. İşaret dili seni bekliyor.";
       }
     }
 
-    // İlk soruyu göster
+    // İlk soruyu başlat
     showQuestion();
   </script>
 
